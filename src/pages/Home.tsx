@@ -27,7 +27,7 @@ export default function Home() {
                         <div className="flex justify-center">
                             <img src={logoAnimation} alt="Logo Animation" className="w-150 pixelImage m-15 mb-5" />
                         </div>
-                        <div className="h-100 mx-40 mb-20 border-dark-amethyst border-10 bg-void/50 text-twilight p-5 text-3xl">
+                        <div className="h-100 mx-[10%] mb-20 border-dark-amethyst border-10 bg-void/50 text-twilight p-5 text-3xl">
                             Theoretically...?
                         </div>
                     </div>
