@@ -6,79 +6,76 @@ import pluto from "@/assets/images/us/pluto.png"
 import phoenix from "@/assets/images/us/phoenix.png"
 import athena from "@/assets/images/us/athena.png"
 import discordIcon from "@/assets/images/icons/discord.png"
-import { useRef, useState } from "react"
-import { Parallax, ParallaxLayer, type IParallax } from '@react-spring/parallax'
+import { useEffect, useState, useRef } from "react"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer";
 
 
 export default function Home() {
-    //const [currentImage, setCurrentImage] = useState("");
-    const parallax = useRef<IParallax>(null!);
-    const [heightIsSet, setHeightIsSet] = useState(false);
-    const [parallaxPages, setParallaxPages] = useState(10);
+    const lastTick = useRef(Date.now());
+    const deltaTime = useRef(0);
+    const velocity = useRef(0);
+    const lastPageOffset = useRef(scrollY || pageYOffset);
+    const lastPageMotion = useRef(0);
 
-    // whatever honestly
-    // this is being really annoying, it's past midnight, and
-    // this is the only way i can get it to work
-    // i'm too lazy to figure out how to make it work better
-    // (i'm not able to change it dynamically either because the page
-    // has to refresh for changes to the parallax components to update.
-    // it's not linear either because of flex wrapping.)
-    //
-    // :(
-    //
-    // this sucks but parallax is so awesome it's worth it
-    if (!heightIsSet) {
-        setHeightIsSet(true);
-        const width = window.innerWidth
-        if (width > 1700) setParallaxPages(2.9);
-        else if (width > 1430) setParallaxPages(3.3);
-        else if (width > 1180) setParallaxPages(4.15);
-        else if (width > 1080) setParallaxPages(4.3);
-        else if (width > 900) setParallaxPages(4.4);
-        else if (width > 850) setParallaxPages(5.4);
-        else if (width > 767) setParallaxPages(5.6);
-        else setParallaxPages(4.4);
-    }
+    const velocityChangeRate = 0.8;
+    const velocityCap = 250;
 
-    /*
-
-    // For eventually showing fun background details at random intervals
-    // gotta figure out what type of media to use for the image :/ gifs are being annoying
-
+    const parallaxLayers = document.getElementsByClassName("parallax");
+    
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImage("");
-        }, 2000);
+            const currentOffset = scrollY || pageYOffset;
+            let workingOffset = lastPageOffset.current - currentOffset;
+            lastPageOffset.current = currentOffset;
+
+            const currentTime = Date.now();
+            deltaTime.current = (currentTime - lastTick.current)
+            lastTick.current = currentTime;
+            velocity.current += Math.pow(1 - ((velocityChangeRate * 0.32) * deltaTime.current), 3) * lastPageMotion.current;
+
+            if (workingOffset != 0) lastPageMotion.current = (Math.sign(workingOffset));
+
+            if (Math.sign(velocity.current) != lastPageMotion.current) velocity.current = 0;
+            {
+
+                let layer, speed: number, currentYPos: number, newYPos;
+                for (let i = 0; i < parallaxLayers.length; i++) {
+                    layer = parallaxLayers[i];
+                    speed = Number.parseFloat(layer.getAttribute('parallax-speed') ?? "0") * velocity.current;
+                    speed /= 10000;
+                    currentYPos = Number.parseFloat(layer.getAttribute('y-pos') ?? "0");
+                    newYPos = (currentYPos - lastPageOffset.current) + (currentOffset) + speed;
+                    layer.setAttribute('style', 'transform: translate3d(0px, ' + newYPos + 'px, 0px)');
+                    layer.setAttribute('y-pos', newYPos.toString());
+                }
+            }
+        }, 10);
 
         return () => clearInterval(interval);
     }, []);
+
+    window.addEventListener("scroll", function (event) {
+        const currentOffset = scrollY || pageYOffset;
+        let workingOffset = lastPageOffset.current - currentOffset;
+        //console.log("last offset: " + lastPageOffset.current + ", current offset: " + currentOffset + ", diff: " + workingOffset + ", sign: " + Math.sign(workingOffset))
+        velocity.current += (velocityChangeRate * deltaTime.current * Math.sign(workingOffset));
+        if (Math.abs(velocity.current) > velocityCap) velocity.current = velocityCap * Math.sign(velocity.current);
+        console.log(velocity.current)
+    });
     
-    */
 
     return (
         <>
-            <Parallax ref={parallax} pages={parallaxPages} className="bg-fixed bg-gradient-to-b from-void to-exosphere font-main text-2xl tracking-wide">
-                <ParallaxLayer offset={0} speed={0.1}>
-                    <img src={stars1} className="pixelImage w-full" />
-                </ParallaxLayer>
-                <ParallaxLayer offset={0} speed={0.15}>
-                    <img src={stars2} className="pixelImage w-full" />
-                </ParallaxLayer>
-                <ParallaxLayer offset={0} speed={0.2}>
-                    <img src={stars3} className="pixelImage w-full" />
-                </ParallaxLayer>
-                {/*
-                    <ParallaxLayer sticky={{ start: 0, end: 3 }}>
-                        {currentImage != "" && <img src={currentImage} className="pixelImage w-full" />}
-                    </ParallaxLayer>
-                */}
-                <ParallaxLayer offset={0} speed={0} id="mainPageContent">
+            <div className="grid bg-fixed bg-gradient-to-b from-void to-exosphere font-main text-2xl tracking-wide">
+                <div className="parallax z-0 bg-[url('@/assets/images/awesome-parallax/stars1.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full col-start-1 row-start-1" parallax-speed="20" />
+                <div className="parallax z-0 bg-[url('@/assets/images/awesome-parallax/stars2.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full col-start-1 row-start-1" parallax-speed="30" />
+                <div className="parallax z-0 bg-[url('@/assets/images/awesome-parallax/stars3.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full col-start-1 row-start-1" parallax-speed="40" />
+                <div className = "z-10 col-start-1 row-start-1">
                     <Navbar />
                     <div className="[word-spacing:0.2rem] md:[word-spacing:0.8rem]">
                         <div className="flex justify-center">
-                            <img src={logoAnimation} alt="Logo Animation" className="w-150 pixelImage m-15 mb-5" />
+                            <img src={logoAnimation} alt="Logo Animation" className="w-[40rem] pixelImage m-15 mb-5" />
                         </div>
                         <div className="mx-[10%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                             <p>
@@ -90,7 +87,7 @@ export default function Home() {
                             <br />
                             <p>
                                 Using games as a storytelling medium, we can bring others into the universes
-                                we create, allow them to envelop themselves in these worlds that exist within us, 
+                                we create, allow them to envelop themselves in these worlds that exist within us,
                                 experience our stories on a personal level not quite possible with other forms of
                                 media.
                             </p>
@@ -117,7 +114,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="flex justify-center flex-wrap mx-[10%]">
-                            <div className="min-w-80 max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
+                            <div className="min-w-[22rem] max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                                 <img src={pluto} alt="Pluto" className="w-full pixelImage p-5" />
                                 <p className="font-bold">
                                     Pluto
@@ -132,7 +129,7 @@ export default function Home() {
                                     a bit of everything else
                                 </p>
                             </div>
-                            <div className="min-w-80 max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
+                            <div className="min-w-[22rem] max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                                 <img src={phoenix} alt="Phoenix" className="w-full p-5" />
                                 <p className="font-bold">
                                     Phoenix
@@ -145,7 +142,7 @@ export default function Home() {
                                     Character design and development, character art, writing
                                 </p>
                             </div>
-                            <div className="min-w-80 max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
+                            <div className="min-w-[22rem] max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                                 <img src={athena} alt="Athena" className="w-full p-5" />
                                 <p className="font-bold">
                                     Athena
@@ -170,16 +167,14 @@ export default function Home() {
                             </p>
                             <div className="w-full flex justify-center">
                                 <a href="https://discord.gg/uKVzsYGa4p" target="_blank">
-                                    <img src={discordIcon} alt="Discord Icon" className="w-16 pixelImage m-4" />
+                                    <img src={discordIcon} alt="Discord Icon" className="w-[4rem] pixelImage m-4" />
                                 </a>
                             </div>
                         </div>
                     </div>
-                </ParallaxLayer>
-                <ParallaxLayer offset={parallaxPages - 0.06} speed={0}>
                     <Footer />
-                </ParallaxLayer>
-            </Parallax >
+                </div>
+            </div>
         </>
     )
 }

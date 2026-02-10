@@ -13,7 +13,7 @@ export default function Navbar() {
                         Contact
                     </a>
                     <a href="https://discord.gg/uKVzsYGa4p" target="_blank">
-                        <img src={discordIcon} alt="Discord Icon" className="w-10 pixelImage" />
+                        <img src={discordIcon} alt="Discord Icon" className="w-[2.5rem] pixelImage" />
                     </a>
                 </div>
             </div>
