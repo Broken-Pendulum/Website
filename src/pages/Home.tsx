@@ -6,14 +6,14 @@ import pluto from "@/assets/images/us/pluto.png"
 import phoenix from "@/assets/images/us/phoenix.png"
 import athena from "@/assets/images/us/athena.png"
 import discordIcon from "@/assets/images/icons/discord.png"
-import { useRef, useEffect, useState } from "react"
+import { useRef, useState } from "react"
 import { Parallax, ParallaxLayer, type IParallax } from '@react-spring/parallax'
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer";
 
 
 export default function Home() {
-    const [currentImage, setCurrentImage] = useState("");
+    //const [currentImage, setCurrentImage] = useState("");
     const parallax = useRef<IParallax>(null!);
     const [heightIsSet, setHeightIsSet] = useState(false);
     const [parallaxPages, setParallaxPages] = useState(10);
