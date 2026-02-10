@@ -55,10 +55,8 @@ export default function Home() {
     window.addEventListener("scroll", function () {
         const currentOffset = scrollY || pageYOffset;
         let workingOffset = lastPageOffset.current - currentOffset;
-        //console.log("last offset: " + lastPageOffset.current + ", current offset: " + currentOffset + ", diff: " + workingOffset + ", sign: " + Math.sign(workingOffset))
         velocity.current += (velocityChangeRate * deltaTime.current * Math.sign(workingOffset));
         if (Math.abs(velocity.current) > velocityCap) velocity.current = velocityCap * Math.sign(velocity.current);
-        console.log(velocity.current)
     });
     
 
