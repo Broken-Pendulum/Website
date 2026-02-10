@@ -1,12 +1,9 @@
 import logoAnimation from "@/assets/images/logo-loop.gif"
-import stars1 from "@/assets/images/awesome-parallax/stars1.png"
-import stars2 from "@/assets/images/awesome-parallax/stars2.png"
-import stars3 from "@/assets/images/awesome-parallax/stars3.png"
 import pluto from "@/assets/images/us/pluto.png"
 import phoenix from "@/assets/images/us/phoenix.png"
 import athena from "@/assets/images/us/athena.png"
 import discordIcon from "@/assets/images/icons/discord.png"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useRef } from "react"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer";
 
@@ -55,7 +52,7 @@ export default function Home() {
         return () => clearInterval(interval);
     }, []);
 
-    window.addEventListener("scroll", function (event) {
+    window.addEventListener("scroll", function () {
         const currentOffset = scrollY || pageYOffset;
         let workingOffset = lastPageOffset.current - currentOffset;
         //console.log("last offset: " + lastPageOffset.current + ", current offset: " + currentOffset + ", diff: " + workingOffset + ", sign: " + Math.sign(workingOffset))
