@@ -9,7 +9,8 @@ import Footer from "@/components/Footer";
 function App() {
     return (
         <>
-            <div className="flex flex-col min-h-screen">
+            <div className="flex flex-col min-h-dvh">
+                <div className="fixed inset-0 -z-10 bg-gradient-to-b from-void to-exosphere" />
                 <Router>
                     <Navbar />
                     <Routes>
