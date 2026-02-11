@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react"
 
 export default function Contact() {
-    const velocity = 1;
+    const velocity = 0.3;
     const bgLayers = document.getElementsByClassName("background");
     const lastTick = useRef(Date.now());
     const deltaTime = useRef(0);
