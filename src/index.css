@@ -19,6 +19,9 @@
     --color-void: #000000;
 }
 
+.pixelImage {
+    image-rendering: pixelated
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -94,10 +97,6 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
-}
-
-.pixelImage {
-    image-rendering: pixelated
 }
 
 .dark {
