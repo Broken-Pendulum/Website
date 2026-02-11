@@ -4,8 +4,6 @@ import phoenix from "@/assets/images/us/phoenix.png"
 import athena from "@/assets/images/us/athena.png"
 import discordIcon from "@/assets/images/icons/discord.png"
 import { useEffect, useRef } from "react"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer";
 
 
 export default function Home() {
