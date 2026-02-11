@@ -36,12 +36,12 @@ export default function Contact() {
 
     return (
         <div className="relative flex grow overflow-hidden bg-fixed bg-gradient-to-b from-void to-exosphere items-center justify-center">
-            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars1.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full" movement-multiplier="2" y-pos="above-screen" />
-            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars2.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full" movement-multiplier="3" y-pos="above-screen" />
-            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars3.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full" movement-multiplier="4" y-pos="above-screen" />
-            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars1.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full" movement-multiplier="2" />
-            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars2.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full" movement-multiplier="3" />
-            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars3.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full" movement-multiplier="4" />
+            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars1.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="2" y-pos="above-screen" />
+            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars2.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="3" y-pos="above-screen" />
+            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars3.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="4" y-pos="above-screen" />
+            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars1.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="2" />
+            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars2.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="3" />
+            <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars3.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="4" />
             <div className="z-10 w-full mx-[10%] text-center mb-20 [word-spacing:0.2rem] md:[word-spacing:0.8rem] font-main text-2xl tracking-wide border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                 <p>
                     Yeah!
