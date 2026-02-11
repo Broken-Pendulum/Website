@@ -67,7 +67,6 @@ export default function Home() {
                 <div className="parallax z-0 bg-[url('@/assets/images/awesome-parallax/stars2.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full col-start-1 row-start-1" parallax-speed="30" />
                 <div className="parallax z-0 bg-[url('@/assets/images/awesome-parallax/stars3.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full col-start-1 row-start-1" parallax-speed="40" />
                 <div className = "z-10 col-start-1 row-start-1">
-                    <Navbar />
                     <div className="[word-spacing:0.2rem] md:[word-spacing:0.8rem]">
                         <div className="flex justify-center">
                             <img src={logoAnimation} alt="Logo Animation" className="w-[40rem] pixelImage m-15 mb-5" />
@@ -167,7 +166,6 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <Footer />
                 </div>
             </div>
         </>
