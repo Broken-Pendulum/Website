@@ -10,7 +10,6 @@ function App() {
     return (
         <>
             <div className="flex flex-col min-h-screen">
-                <div className="fixed inset-0 -z-50 bg-gradient-to-b from-void to-exosphere" />
                 <Router>
                     <Navbar />
                     <Routes>

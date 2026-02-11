@@ -66,7 +66,7 @@ export default function Home() {
     return (
         <>
             <div className="relative overflow-hidden font-main text-2xl tracking-wide">
-                <div className="fixed inset-0 -z-10 bg-gradient-to-b from-void to-exosphere" />
+                <div className="fixed -inset-50 -z-10 bg-gradient-to-b from-void to-exosphere" />
                 <div className="parallax absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars1.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full will-change-transform" parallax-speed="20" />
                 <div className="parallax absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars2.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full will-change-transform" parallax-speed="30" />
                 <div className="parallax absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars3.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full will-change-transform" parallax-speed="40" />
