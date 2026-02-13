@@ -14,7 +14,7 @@ export default function Navbar() {
                         Contact
                     </Link>
                     <a href="https://discord.gg/uKVzsYGa4p" target="_blank">
-                        <img src={discordIcon} alt="Discord Icon" className="w-[2.5rem] pixelImage" />
+                        <div className="w-[2rem] h-[2rem] sm:w-[2.5rem] sm:h-[2.5rem] md:w-[3rem] md:h-[3rem] pixelImage m-4 bg-[url('@/assets/images/icons/discord-dark.png')] hover:bg-[url('@/assets/images/icons/discord.png')] bg-size-[100%]" />
                     </a>
                 </div>
             </div>

@@ -2,7 +2,6 @@ import logoAnimation from "@/assets/images/logo-loop.gif"
 import pluto from "@/assets/images/us/pluto.png"
 import phoenix from "@/assets/images/us/phoenix.png"
 import athena from "@/assets/images/us/athena.png"
-import discordIcon from "@/assets/images/icons/discord.png"
 import { useEffect, useRef } from "react"
 
 
@@ -102,7 +101,7 @@ export default function Home() {
                     </div>
                     <div className="mx-[10%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                         <p>
-                            Broken Pendulum was founded on a passion for storytelling and creation.
+                            Broken Pendulum is a game studio founded on a passion for storytelling and creation.
                         </p>
                         <p>
                             We want to tell stories that mean something to the people experiencing them.
@@ -169,7 +168,7 @@ export default function Home() {
                         </p>
                         <div className="w-full flex justify-center">
                             <a href="https://discord.gg/uKVzsYGa4p" target="_blank">
-                                <img src={discordIcon} alt="Discord Icon" className="w-[4rem] pixelImage m-4" />
+                                <div className="w-[3rem] h-[3rem] sm:w-[3.5rem] sm:h-[3.5rem] md:w-[4rem] md:h-[4rem] pixelImage m-4 bg-[url('@/assets/images/icons/discord.png')] hover:bg-[url('@/assets/images/icons/discord-light.png')] bg-size-[100%]" />
                             </a>
                         </div>
                     </div>
