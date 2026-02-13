@@ -45,7 +45,7 @@ export default function Epicycle() {
                 <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/gnp.stars1srats.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="2" />
                 <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/gnp.stars2srats.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="3" />
                 <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/gnp.stars3srats.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="4" />
-                <div className="z-10 w-full mx-[10%] text-center mb-20 [word-spacing:0.2rem] md:[word-spacing:0.8rem] font-main text-2xl tracking-wide border-perennial border-5 sm:border-8 md:border-10 bg-void/50 text-shallows p-5 text-lg sm:text-xl md:text-3xl">
+                <div className="z-10 w-full mx-[10%] text-center my-[5rem] [word-spacing:0.2rem] md:[word-spacing:0.8rem] font-main text-2xl tracking-wide border-perennial border-5 sm:border-8 md:border-10 bg-void/50 text-shallows p-5 text-lg sm:text-xl md:text-3xl">
                     <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl p-[3rem]">
                         Come back soon for more info!
                     </h2>
