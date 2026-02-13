@@ -51,8 +51,8 @@ export default function Contact() {
                     </h2>
                     <p>
                         The easiest way to chat with us is through our Discord server. You can come talk in the designated
-                        channels or DM Pluto directly if there's anything you want to know (as long as you follow our server rules).
-                        For more professional communication, you can send us an email at contact.brokenpendulum@gmail.com.
+                        channels or DM Pluto directly if there's anything you want to know.
+                        For more professional communication (or any other reason), you can send us an email at contact.brokenpendulum@gmail.com.
                     </p>
                     <div className="w-full flex justify-center">
                         <a href="https://discord.gg/uKVzsYGa4p" target="_blank">

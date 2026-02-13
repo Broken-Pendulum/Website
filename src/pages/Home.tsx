@@ -161,8 +161,8 @@ export default function Home() {
                     </div>
                     <div className="mx-[10%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                         <p>
-                            Join our (brand new) discord community to help playtest and give feedback, or just to talk with us
-                            and other people interested in what we're making. We want to hear from you!
+                            Join our (brand new) Discord community to help playtest and give feedback, or to just talk with us
+                            and other people interested in our projects. We want to hear from you!
                         </p>
                         <br />
                         <p>
