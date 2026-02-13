@@ -1,6 +1,5 @@
 
 import { Link } from 'react-router-dom';
-import discordIcon from "@/assets/images/icons/discord.png"
 
 export default function Navbar() {
     return (
