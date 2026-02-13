@@ -4,7 +4,6 @@ import phoenix from "@/assets/images/us/phoenix.png"
 import athena from "@/assets/images/us/athena.png"
 import { useEffect, useRef } from "react"
 
-
 export default function Home() {
     const lastTick = useRef(Date.now());
     const deltaTime = useRef(0);
@@ -20,7 +19,7 @@ export default function Home() {
     useEffect(() => {
         const interval = setInterval(() => {
             const currentOffset = scrollY || pageYOffset;
-            let workingOffset = lastPageOffset.current - currentOffset;
+            const workingOffset = lastPageOffset.current - currentOffset;
             lastPageOffset.current = currentOffset;
 
             const currentTime = Date.now();
@@ -56,7 +55,7 @@ export default function Home() {
 
     window.addEventListener("scroll", function () {
         const currentOffset = scrollY || pageYOffset;
-        let workingOffset = lastPageOffset.current - currentOffset;
+        const workingOffset = lastPageOffset.current - currentOffset;
         velocity.current += (velocityChangeRate * deltaTime.current * Math.sign(workingOffset));
         if (Math.abs(velocity.current) > velocityCap) velocity.current = velocityCap * Math.sign(velocity.current);
     });
@@ -64,6 +63,9 @@ export default function Home() {
 
     return (
         <>
+            <title>Broken Pendulum</title>
+            <meta name="description" content="Broken Pendulum is a small, community-first indie game studio founded on an intense passion for creation and storytelling." />
+
             <div className="relative isolate overflow-hidden font-main text-2xl tracking-wide bg-fixed bg-gradient-to-b from-void to-exosphere">
                 <div className="parallax absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars1.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full will-change-transform" parallax-speed="20" />
                 <div className="parallax absolute z-0 bg-[url('@/assets/images/awesome-parallax/stars2.png')] bg-size-[100%] bg-repeat pixelImage w-full h-full will-change-transform" parallax-speed="30" />
