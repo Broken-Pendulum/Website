@@ -16,7 +16,9 @@ export default function Home() {
     const parallaxLayers = document.getElementsByClassName("parallax");
 
     useEffect(() => {
+        console.log(screen.height);
         velocityChangeRate.current = screen.height / 1050;
+        console.log(velocityChangeRate.current);
     }, [screen.width]);
 
     useEffect(() => {
