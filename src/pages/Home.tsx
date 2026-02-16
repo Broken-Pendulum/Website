@@ -11,11 +11,14 @@ export default function Home() {
     const lastPageOffset = useRef(scrollY || pageYOffset);
     const lastPageMotion = useRef(0);
 
-    const velocityChangeRate = 1;
-    const velocityCap = 250;
+    const velocityChangeRate = useRef(screen.height / 1050);
 
     const parallaxLayers = document.getElementsByClassName("parallax");
-    
+
+    useEffect(() => {
+        velocityChangeRate.current = screen.height / 1050;
+    }, [screen.width]);
+
     useEffect(() => {
         const interval = setInterval(() => {
             const currentOffset = scrollY || pageYOffset;
@@ -25,7 +28,7 @@ export default function Home() {
             const currentTime = Date.now();
             deltaTime.current = (currentTime - lastTick.current)
             lastTick.current = currentTime;
-            velocity.current += Math.pow(1 - (0.22 * deltaTime.current), 3) * lastPageMotion.current;
+            velocity.current += Math.pow(1 - ((velocityChangeRate.current * 0.22) * deltaTime.current), 3) * lastPageMotion.current;
 
             if (workingOffset != 0) lastPageMotion.current = (Math.sign(workingOffset));
 
@@ -54,9 +57,10 @@ export default function Home() {
     }, []);
 
     window.addEventListener("scroll", function () {
+        const velocityCap = velocityChangeRate.current * 250;
         const currentOffset = scrollY || pageYOffset;
         const workingOffset = lastPageOffset.current - currentOffset;
-        velocity.current += (velocityChangeRate * deltaTime.current * Math.sign(workingOffset));
+        velocity.current += (velocityChangeRate.current * deltaTime.current * Math.sign(workingOffset));
         if (Math.abs(velocity.current) > velocityCap) velocity.current = velocityCap * Math.sign(velocity.current);
     });
     
@@ -119,7 +123,7 @@ export default function Home() {
                     <div className="flex justify-center flex-wrap mx-[10%]">
                         <div className="min-w-[22rem] max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                             <img src={pluto} alt="Pluto" className="w-full pixelImage p-5" />
-                            <p className="font-bold">
+                            <p className="font-bold text-xl sm:text-2xl md:text-4xl">
                                 Pluto
                             </p>
                             <p className="text-exosphere">
@@ -134,7 +138,7 @@ export default function Home() {
                         </div>
                         <div className="min-w-[22rem] max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                             <img src={phoenix} alt="Phoenix" className="w-full p-5" />
-                            <p className="font-bold">
+                            <p className="font-bold text-xl sm:text-2xl md:text-4xl">
                                 Phoenix
                             </p>
                             <p className="text-exosphere">
@@ -147,7 +151,7 @@ export default function Home() {
                         </div>
                         <div className="min-w-[22rem] max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                             <img src={athena} alt="Athena" className="w-full p-5" />
-                            <p className="font-bold">
+                            <p className="font-bold text-xl sm:text-2xl md:text-4xl">
                                 Athena
                             </p>
                             <p className="text-exosphere">

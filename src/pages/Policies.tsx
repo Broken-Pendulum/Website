@@ -7,10 +7,13 @@ export default function Policies() {
     const lastPageOffset = useRef(scrollY || pageYOffset);
     const lastPageMotion = useRef(0);
 
-    const velocityChangeRate = 1;
-    const velocityCap = 250;
+    const velocityChangeRate = useRef(screen.height / 1050);
 
     const parallaxLayers = document.getElementsByClassName("parallax");
+
+    useEffect(() => {
+        velocityChangeRate.current = screen.height / 1050;
+    }, [screen.width]);
 
     useEffect(() => {
         window.scroll(0, 0);
@@ -22,7 +25,7 @@ export default function Policies() {
             const currentTime = Date.now();
             deltaTime.current = (currentTime - lastTick.current)
             lastTick.current = currentTime;
-            velocity.current += Math.pow(1 - (0.22 * deltaTime.current), 3) * lastPageMotion.current;
+            velocity.current += Math.pow(1 - ((velocityChangeRate.current * 0.22) * deltaTime.current), 3) * lastPageMotion.current;
 
             if (workingOffset != 0) lastPageMotion.current = (Math.sign(workingOffset));
 
@@ -51,9 +54,10 @@ export default function Policies() {
     }, []);
 
     window.addEventListener("scroll", function () {
+        const velocityCap = velocityChangeRate.current * 250;
         const currentOffset = scrollY || pageYOffset;
         const workingOffset = lastPageOffset.current - currentOffset;
-        velocity.current += (velocityChangeRate * deltaTime.current * Math.sign(workingOffset));
+        velocity.current += (velocityChangeRate.current * deltaTime.current * Math.sign(workingOffset));
         if (Math.abs(velocity.current) > velocityCap) velocity.current = velocityCap * Math.sign(velocity.current);
     });
     
