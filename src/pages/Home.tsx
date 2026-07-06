@@ -133,22 +133,8 @@ export default function Home() {
                             </p>
                             ---
                             <p>
-                                Programming, game design, story, sound design, writing,
-                                environmental sprites,
+                                Programming, game design, story,
                                 a bit of everything else
-                            </p>
-                        </div>
-                        <div className="min-w-[22rem] max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
-                            <img src={phoenix} alt="Phoenix" className="w-full p-5" />
-                            <p className="font-bold text-xl sm:text-2xl md:text-4xl">
-                                Phoenix
-                            </p>
-                            <p className="text-exosphere">
-                                2DPhoenix
-                            </p>
-                            ---
-                            <p>
-                                Character design and development, character art, writing
                             </p>
                         </div>
                         <div className="min-w-[22rem] max-w-[28.3%] mx-[2.5%] text-center mb-20 border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
