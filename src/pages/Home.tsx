@@ -1,6 +1,5 @@
 import logoAnimation from "@/assets/images/logo-loop.gif"
 import pluto from "@/assets/images/us/pluto.png"
-import phoenix from "@/assets/images/us/phoenix.png"
 import athena from "@/assets/images/us/athena.png"
 import { useEffect, useRef } from "react"
 
