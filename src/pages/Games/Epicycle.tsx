@@ -45,13 +45,17 @@ export default function Epicycle() {
                 <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/gnp.stars1srats.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="2" />
                 <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/gnp.stars2srats.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="3" />
                 <div className="background absolute z-0 bg-[url('@/assets/images/awesome-parallax/gnp.stars3srats.png')] bg-size-[100%] bg-repeat pixelImage min-w-screen h-full will-change-transform" movement-multiplier="4" />
-                <div className="z-10 w-full mx-[10%] text-center my-[5rem] [word-spacing:0.2rem] md:[word-spacing:0.8rem] font-main text-2xl tracking-wide border-perennial border-5 sm:border-8 md:border-10 bg-void/50 text-shallows p-5 text-lg sm:text-xl md:text-3xl">
+                <div className="z-10 w-full mx-[10%] text-center my-[5rem] [word-spacing:0.2rem] md:[word-spacing:0.8rem] font-main text-2xl tracking-wide border-perennial border-5 sm:border-8 md:border-10 bg-void/50 text-shallows p-8 text-lg sm:text-xl md:text-3xl">
                     <h1 className="font-[Directdings] text-5xl sm:text-4xl md:text-7xl px-[3rem] pt-[1.5rem]">
                         W V F X
                     </h1>
                     <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl p-[3rem]">
                         Development has been postponed.
                     </h2>
+                    Epicycle is a character-driven puzzle-adventure game where the player is trapped in a timeloop in a small town.
+                    Those experiencing the loop must get to know the town's residents, learn their secrets, and devise a way to escape
+                    before the world resets again. The game focuses on the psychology of the town's residents and how each of them reacts
+                    to the nature of the universe.
                 </div>
             </div>
         </>
