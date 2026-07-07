@@ -8,6 +8,9 @@ export default function Navbar() {
                     BROKEN PENDULUM
                 </Link>
                 <div className="flex items-center gap-6 text-porcelain relative">
+                    <Link to="/schema-materia" className="py-3 font-bold text-royalty hover:text-amethyst text-3xl line-height-0">
+                        Schema Materia
+                    </Link>
                     <Link to="/epicycle" className="py-3 font-bold text-perennial hover:text-shallows text-3xl line-height-0">
                         Epicycle
                     </Link>
