@@ -8,6 +8,10 @@
     src: url("@/assets/fonts/brokenPendulum.woff2") format("woff2");
 }
 
+@font-face {
+    font-family: Directdings;
+    src: url("@/assets/fonts/directdings.woff2") format("woff2");
+}
 
 @theme {
     --font-main: "BrokenPendulum", sans-serif;
