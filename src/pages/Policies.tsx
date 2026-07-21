@@ -122,25 +122,20 @@ export default function Policies() {
                     </div>
                     <div className="mx-[10%] text-center my-[5rem] border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
                         <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl pb-[1.5rem]">
-                            LLM (AI) Policy
+                            Generative AI Policy
                         </h2>
                         <p>
-                            Large Language Models (generative AI) are not a substitute for creativity. When something
-                            is created with an LLM, it is created BY the LLM, not by the user. All of our assets,
+                            Generative AI has no place in any creative process. When something
+                            is created with generative AI, it is created BY the AI model, not by the user. All of our assets,
                             code, writing, and external media is created by us.
                         </p>
                         <br />
                         <p>
-                            The one exception to this rule is in debugging. If I've been bashing my head against
-                            the wall for hours on a specific issue and I can't find and answer from documentation,
-                            Google, Stack Overflow, or Random Guy on Reddit 12 Years Ago, I might use an LLM to
-                            help diagnose the issue and point me to other resources that can help me solve the problem.
-                            I will never have an LLM write the code for me, because why would I do that? The whole point
-                            of founding a game studio is that I like making the games. Why would I have something
-                            else make the game for me?
-                        </p>
-                        <p>
-                            - Pluto
+                            We will use LLMs to help with debugging as a last resort. If we're running into a problem
+                            that we are unable to find an answer to through other means, we may use an LLM strictly as a tool
+                            to help diagnose the problem. We will not have it write the code for us, and will only use it to point to the
+                            relevant resource that we are unable to find. We avoid doing this as much as possible because we find 
+                            generative AI to be the antithesis of creativity and generally repulsive in the vast majority of usecases.
                         </p>
                     </div>
                     <div className="mx-[10%] text-center my-[5rem] border-dark-amethyst border-5 sm:border-8 md:border-10 bg-void/50 text-twilight p-5 text-lg sm:text-xl md:text-3xl">
